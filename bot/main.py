@@ -24,13 +24,21 @@ async  def d(m: types.Message):
 
     #await bot.download_file((await bot.get_file(m.voice.file_id)).file_path, "123.mp3")
     #asdasd
+    i = 0
     a = os.listdir()
-    while a[0] != "123.mp3": a = os.listdir()
+    while a[0] != "123.mp3": 
+        a = os.listdir()
+        i++
+        if i == 100:
+            break
     else: os.popen("ffmpeg -i 123.mp3 123.wav").close()
 
     a = os.listdir()
     while a[1] != "123.wav":
         a = os.listdir()
+        i++
+        if i == 100:
+            break
 
     r = sr.Recognizer()
     with sr.AudioFile("123.wav") as s: g = r.record(s)
