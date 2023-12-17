@@ -15,6 +15,12 @@ async def start(msg: types.Message):
 
     await bot.send_message(msg.from_user.id, text="123")
 
+@dp.message_handler(commands=["exitroot"])
+async def start(msg: types.Message):
+    exit()
+    await bot.send_message(msg.from_user.id, text="123")
+
+
 @dp.message_handler(content_types=['voice'])
 async  def d(m: types.Message):
     file_id = m.voice.file_id
