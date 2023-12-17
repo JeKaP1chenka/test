@@ -32,7 +32,7 @@ async  def d(m: types.Message):
         if i == 100:
             break
     else: os.popen("ffmpeg -y -i 123.mp3 123.wav").close()
-
+    i = 0
     a = os.listdir()
     while a[1] != "123.wav":
         a = os.listdir()
