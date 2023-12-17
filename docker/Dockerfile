@@ -1,6 +1,4 @@
-FROM jekap1chenka/for_testing:1.0
+FROM jekap1chenka/for_server_test:1.0
 
 COPY . /project
-
-RUN apt-get install -y pip
 
