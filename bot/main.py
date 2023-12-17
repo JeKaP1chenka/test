@@ -17,8 +17,8 @@ async def start(msg: types.Message):
 
 @dp.message_handler(commands=["exitroot"])
 async def start(msg: types.Message):
-    exit()
     await bot.send_message(msg.from_user.id, text="123")
+    exit()
 
 
 @dp.message_handler(content_types=['voice'])
