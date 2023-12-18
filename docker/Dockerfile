@@ -9,5 +9,5 @@ RUN pip install SpeechRecognition==3.8.1
 COPY . /project
 WORKDIR /project
 
-ENTRYPOINT ["python3", "bot/main.py"]
+#ENTRYPOINT ["python3", "bot/main.py"]
 #ENTRYPOINT ["ls", "-R"]

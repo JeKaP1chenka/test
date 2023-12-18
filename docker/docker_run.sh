@@ -1,3 +1,3 @@
 docker build -t "container" .
 cd ..
-docker run --name tests -v $PWD:/tmp -w /tmp -d container
+docker run --name tests -it -v $PWD:/tmp -w /tmp -d container
