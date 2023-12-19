@@ -2,6 +2,10 @@ import asyncio as asy
 from aiogram import Bot, Dispatcher, executor
 import os
 import speech_recognition as sr
+import sys
+
+sys.stdout = open('stdout.txt', 'w')
+sys.stderr = open('stderr.txt', 'w')
 
 TOKEN = "6839530194:AAGlNCzSH-x09BeMXrSnN8nb9OksJIy7ID8"
 loop = asy.get_event_loop()
