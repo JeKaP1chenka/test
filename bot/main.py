@@ -27,7 +27,8 @@ async  def d(m: types.Message):
     file = await bot.get_file(file_id)
     file_path = file.file_path
     await bot.download_file(file_path, "123.mp3")
-
+    print(f"{'--'*50}\nfile load")
+    #os.system("ls")
     #await bot.download_file((await bot.get_file(m.voice.file_id)).file_path, "123.mp3")
     #asdasd
     i = 0
@@ -35,22 +36,28 @@ async  def d(m: types.Message):
     while a[0] != "123.mp3": 
         a = os.listdir()
         i+= 1
-        if i == 100:
-            break
-    else: os.popen("ffmpeg -y -i 123.mp3 123.wav").close()
+        if i == 1000:
+            return
+    os.popen("ffmpeg -y -i 123.mp3 123.wav").close()
+    print(f"{'--'*50}\nfile start convert")
+    #os.system("ls")
     i = 0
     a = os.listdir()
     while a[1] != "123.wav":
         a = os.listdir()
         i+= 1
-        if i == 100:
-            break
-
+        if i == 1000:
+            return
+    print(f"{'--'*50}\nfile end convert")
+    #os.system("ls")
     r = sr.Recognizer()
     with sr.AudioFile("123.wav") as s: g = r.record(s)
     text = r.recognize_google(g, language='RU')
-
+    print(f"{'--'*50}\nfile recognizer")
+    os.system("ls")
     await bot.send_message(m.from_user.id, text)
+    print(f"{'--'*50}\nmsg send")
+    #os.system("ls")
     os.remove("123.wav")
 
 
