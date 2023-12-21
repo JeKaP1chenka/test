@@ -2,12 +2,11 @@ FROM jekap1chenka/for_server_test:1.0
 
 RUN apt-get install -y ffmpeg
 
-COPY . /project
+COPY /bot /project
 WORKDIR /project
 
 RUN pip install -r requirements.txt
 
-RUN chmod -R 777 bot
-RUN chmod 777 script.sh
+RUN chmod -R 777 .
 
-ENTRYPOINT ["bash", "script.sh"]
+ENTRYPOINT [ "python3", "main.py" ]

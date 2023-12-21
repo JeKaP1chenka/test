@@ -1,2 +1,2 @@
-aiogram==2.14.3
-asyncio
+aiogram==2.22.1
+SpeechRecognition==3.8.1
